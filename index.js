@@ -35,7 +35,7 @@ function applyGetters(schema, res) {
     return;
   }
 
-  if (this._mongooseOptions.lean && this._mongooseOptions.lean.getters) {
+  if (this._mongooseOptions.lean && this._mongooseOptions.lean.getters !== false) {
     if (Array.isArray(res)) {
       const len = res.length;
       for (let i = 0; i < len; ++i) {
